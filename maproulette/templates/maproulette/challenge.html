@@ -8,7 +8,7 @@
 
 <ol>
 {% for task in challenge.tasks.all %}
-    <li>{{ task.identifier }}</li>
+    <li><a href="{% url 'task' challenge.slug task.identifier %}">{{ task.identifier }}</a></li>
 {% endfor %}
 </ol>
 
