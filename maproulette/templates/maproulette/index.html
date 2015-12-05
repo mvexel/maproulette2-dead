@@ -1,0 +1,9 @@
+{% if challenge_list %}
+    <ul>
+    {% for challenge in challenge_list %}
+        <li><a href="/challenge/{{ challenge.slug }}/">{{ challenge.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No challenges are available.</p>
+{% endif %}
