@@ -18,6 +18,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^maproulette/', include('maproulette.urls')),
+    url(r'^', include('maproulette.urls')),
     url(r'^admin/', admin.site.urls),
 ]
