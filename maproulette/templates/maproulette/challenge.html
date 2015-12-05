@@ -6,4 +6,10 @@
 
 <h2>{{ challenge.name }}</h2>
 
+<ol>
+{% for task in challenge.tasks.all %}
+    <li>{{ task.identifier }}</li>
+{% endfor %}
+</ol>
+
 {% endblock %}
