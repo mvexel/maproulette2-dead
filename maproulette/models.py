@@ -11,7 +11,8 @@ class Task(models.Model):
 	challenge = models.ForeignKey(
 		Challenge,
 		on_delete=models.CASCADE,
-		db_column='challenge_slug')
+		db_column='challenge_slug',
+		related_name='tasks')
 	identifier = models.CharField(max_length=50, primary_key=True)
 	pub_date = models.DateTimeField('date published')
 	geom = models.GeometryCollectionField('geometry')
