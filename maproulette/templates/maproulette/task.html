@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}MapRoulette - Task{% endblock %}
+{% block title %}MapRoulette - Task {{ task.identifier }}{% endblock %}
 
 {% block content %}
 
-<h2>Task</h2>
+<h2>{{ task.identifier }}</h2>
 
+<p><a href="{% url 'maproulette:challenge' task.challenge.slug %}">Back to challenge</a>
 {% endblock %}

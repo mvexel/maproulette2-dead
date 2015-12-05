@@ -7,7 +7,7 @@
 {% if challenge_list %}
     <ul>
     {% for challenge in challenge_list %}
-        <li><a href="/challenge/{{ challenge.slug }}/">{{ challenge.name }}</a></li>
+        <li><a href="{% url 'maproulette:challenge' challenge.slug %}">{{ challenge.name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
