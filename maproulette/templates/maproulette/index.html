@@ -1,16 +1,8 @@
-{% load static %}
+{% extends "base.html" %}
 
-<script type="text/javascript" src='{% static 'jquery/dist/jquery.js' %}'></script>
+{% block title %}MapRoulette{% endblock %}
 
-{# Load the tag library #}
-{% load bootstrap3 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
+{% block content %}
 
 {% if challenge_list %}
     <ul>
@@ -21,3 +13,5 @@
 {% else %}
     <p>No challenges are available.</p>
 {% endif %}
+
+{% endblock %}

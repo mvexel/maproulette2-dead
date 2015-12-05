@@ -1,0 +1,25 @@
+<html>
+<head>
+	{% load static %}
+
+	<script type="text/javascript" src='{% static 'jquery/dist/jquery.js' %}'></script>
+
+	{# Load the tag library #}
+	{% load bootstrap3 %}
+
+	{# Load CSS and JavaScript #}
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
+
+	{# Display django.contrib.messages as Bootstrap alerts #}
+	{% bootstrap_messages %}
+    
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+	<h1>MapRoulette</h1>
+    {% block content %}{% endblock %}
+</body>
+
+</html>
