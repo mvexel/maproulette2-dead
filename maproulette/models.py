@@ -3,6 +3,8 @@ from django.utils import timezone
 import secretballot
 
 class Challenge(models.Model):
+	def __unicode__(self):
+		return self.name
 	slug = models.CharField(max_length=30)
 	name = models.CharField(max_length=30)
 	description = models.TextField()
@@ -12,6 +14,10 @@ class Challenge(models.Model):
 	creation_date = models.DateTimeField('date created', default=timezone.now)
 
 class Task(models.Model):
+	def __unicode__(self):
+		return "{} ({})".format(
+			self.identifier,
+			self.challenge.name)
 	challenge = models.ForeignKey(
 		Challenge,
 		on_delete=models.CASCADE,
