@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     'bootstrap3',
     'djangobower',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -141,3 +144,15 @@ BOWER_PATH = '/usr/local/bin/bower'
 BOWER_INSTALLED_APPS = (
     'jquery#2.1.4',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.openstreetmap.OpenStreetMapOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Python Social Auth + OSM specific settings
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_OPENSTREETMAP_KEY = 'KppsREjOguYQj5JsbFkZmNGoucD4gDD2zm2N9gUZ'
+SOCIAL_AUTH_OPENSTREETMAP_SECRET = '9BB20SOCSIeyvkv6mri02j5IJLGQq390WzjA2F07'
+LOGIN_REDIRECT_URL = '/'
