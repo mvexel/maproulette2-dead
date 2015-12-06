@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'bootstrap3',
     'djangobower',
     'social.apps.django_app.default',
+    'debug_toolbar',
+    'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
