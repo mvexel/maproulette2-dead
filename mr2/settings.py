@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     'bootstrap3',
     'djangobower',
     'social.apps.django_app.default',
-    'debug_toolbar',
+#    'debug_toolbar',
     'django_extensions',
+    'secretballot',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -54,6 +55,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'secretballot.middleware.SecretBallotIpUseragentMiddleware',
 ]
 
 ROOT_URLCONF = 'mr2.urls'
