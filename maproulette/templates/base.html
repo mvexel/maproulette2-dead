@@ -27,9 +27,6 @@
 	{% endif %}
 	</p>
     {% block content %}{% endblock %}
-
-    {% url 'social:disconnect' "openstreetmap" %}
-    {% django.contrib.auth.views.logout %}
 </body>
 
 </html>
