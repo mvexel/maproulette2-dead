@@ -21,9 +21,9 @@
 	<h1>MapRoulette</h1>
 	<p>
 	{% if request.user.is_authenticated %}
-		Logged in as {{ user.get_username }} | <a href="">Log out</a>
+		Signed in as {{ user.get_username }} | <a href="/signout">Sign out</a>
 	{% else %}
- 		<a href="">Log in on OSM</a>
+ 		<a href="{% url "social:begin" backend="openstreetmap" %}">Sign in on OSM</a>
 	{% endif %}
 	</p>
     {% block content %}{% endblock %}

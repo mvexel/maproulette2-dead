@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
-
+from django.contrib.auth import logout
 from .models import Challenge, Task
 
 def index(request):
@@ -31,3 +31,11 @@ def challenge(request, challenge_slug):
         {
             'challenge': challenge,
         })
+
+def signout(request):
+    logout(request)
+    return redirect('/')
+
+def signin(request):
+    logout(request)
+    return redirect('/')
